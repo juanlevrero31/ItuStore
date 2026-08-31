@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItuStore - Tienda de Computación</title>
+    <meta name="description" content="Los mejores productos de computación al mejor precio. Encuentra laptops, monitores, teclados y más.">
+    
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="bi bi-pc-display-horizontal me-2"></i>ItuStore
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item position-relative">
+                            <button class="btn btn-outline-light position-relative" id="carritoBtn" aria-label="Ver carrito">
+                                <i class="bi bi-cart3 fs-5"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="carritoCount">
+                                    0
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+         <!-- ==================== HERO - PORTADA MEJORADA ==================== -->
+        <section class="hero-section text-white py-5" aria-labelledby="heroTitle">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <!-- Badge de oferta -->
+                        <span class="badge bg-danger mb-3" style="font-size: 0.9rem; padding: 8px 20px;">
+                            <i class="bi bi-fire me-1"></i> Hasta 12 cuotas sin interés
+                        </span>
+                        <h1 id="heroTitle" class="display-3 fw-bold mb-3">
+                            Tecnología de <br><span style="color: #0d6efd;">vanguardia</span>
+                        </h1>
+                        <p class="lead mb-4" style="font-size: 1.2rem; opacity: 0.9;">
+                            Los mejores componentes y periféricos para tu setup. 
+                            Calidad y rendimiento garantizados con <strong>envío gratis</strong> en toda Argentina.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#productos" class="btn btn-primary btn-lg">
+                                <i class="bi bi-grid me-2"></i> Ver productos
+                            </a>
+                            <a href="#contacto" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots me-2"></i> Contactanos
+                            </a>
+                        </div>
+                        <!-- Stats -->
+                        <div class="mt-4 pt-3 d-flex gap-4 flex-wrap border-top border-light border-opacity-25">
+                            <div>
+                                <span class="fw-bold fs-4">15+</span>
+                                <span class="d-block small">Productos</span>
+                            </div>
+                            <div>
+                                <span class="fw-bold fs-4">10</span>
+                                <span class="d-block small">Bancos</span>
+                            </div>
+                            <div>
+                                <span class="fw-bold fs-4">12</span>
+                                <span class="d-block small">Cuotas sin interés</span>
+                            </div>
+                            <div>
+                                <span class="fw-bold fs-4">🚚</span>
+                                <span class="d-block small">Envío gratis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block text-end">
+                        <div class="position-relative">
+                            <!-- Icono grande -->
+                            <i class="bi bi-pc-display-horizontal display-1 opacity-25"></i>
+                            <!-- Círculo decorativo -->
+                            <div class="position-absolute top-50 start-50 translate-middle" 
+                                 style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(13,110,253,0.1) 0%, transparent 70%); border-radius: 50%; z-index: -1;">
+                            </div>
+                            <!-- Badges flotantes -->
+                              <div class="position-absolute bg-success rounded-circle p-3" 
+                              style="width: 60px; height: 60px; top: -25px; right: -25px; animation: float 3s ease-in-out infinite;">
+                              <span class="text-white fw-bold" style="font-size: 0.7rem;">-20% OFF</span>
+</div>
+                            <div class="position-absolute bottom-0 start-0 bg-warning rounded-circle p-2" style="width: 50px; height: 50px; animation: float 3s ease-in-out infinite 1s;">
+                                <span class="text-dark fw-bold" style="font-size: 0.6rem;">12x s/i</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRODUCTOS ==================== -->
+        <section id="productos" class="py-5" aria-labelledby="productosTitle">
+            <div class="container">
+                <h2 id="productosTitle" class="text-center fw-bold mb-2">Nuestros Productos</h2>
+                <p class="text-center text-muted mb-5">Lo último en tecnología para tu computadora</p>
+                
+                <div class="row g-4" id="productosContainer">
+                    <!-- Los productos se renderizan dinámicamente con JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACTO ==================== -->
+        <section id="contacto" class="py-5 bg-light" aria-labelledby="contactoTitle">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 id="contactoTitle" class="text-center fw-bold mb-4">Contáctanos</h2>
+                        <p class="text-center text-muted mb-4">¿Tenés preguntas? Escribinos y te respondemos lo antes posible.</p>
+                        
+                        <form id="contactForm" action="https://formspree.io/f/xwllkkpkp" method="POST" class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar mensaje <i class="bi bi-send ms-2"></i></button>
+                            <div id="formStatus" class="mt-3 text-center"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 ItuStore. Todos los derechos reservados.</p>
+        
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL CARRITO ==================== -->
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="carritoModalLabel"><i class="bi bi-cart3 me-2"></i>Tu Carrito</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="carritoBody">
+                    <p class="text-center text-muted">Tu carrito está vacío</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                    <button type="button" class="btn btn-success" id="vaciarCarrito">Vaciar carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Personalizado -->
+    <script src="js/main.js"></script>
+</body>
+</html>
