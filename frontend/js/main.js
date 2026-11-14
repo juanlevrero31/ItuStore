@@ -1,219 +1,34 @@
 // ============================================
-// 1. PRODUCTOS - CON OFERTAS Y CUOTAS
+// 1. PRODUCTOS (AHORA VIENEN DEL BACK-END)
 // ============================================
-const productos = [
-    // ========== LAPTOPS ==========
-    { 
-        id: 1, 
-        nombre: "Laptop ASUS ROG Zephyrus G14", 
-        categoria: "Laptops", 
-        precio: 1899900,
-        precioAnterior: 2199900,
-        oferta: true,
-        cuotas: 12,
-        envioGratis: true,
-        stock: 5,
-        imagen: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=400&h=300&fit=crop", 
-        descripcion: "Ryzen 9, RTX 4060, 16GB RAM, 1TB SSD" 
-    },
-    { 
-        id: 2, 
-        nombre: "MacBook Air M3", 
-        categoria: "Laptops", 
-        precio: 2299900,
-        precioAnterior: 2599900,
-        oferta: true,
-        cuotas: 12,
-        envioGratis: true,
-        stock: 3,
-        imagen: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop", 
-        descripcion: "Chip M3, 8GB RAM, 256GB SSD, 13.6 pulgadas" 
-    },
-    { 
-        id: 3, 
-        nombre: "Laptop HP Pavilion 15", 
-        categoria: "Laptops", 
-        precio: 1499900,
-        precioAnterior: 1699900,
-        oferta: true,
-        cuotas: 12,
-        envioGratis: true,
-        stock: 8,
-        imagen: "https://mx-media.hptiendaenlinea.com/catalog/product/3/0/308Z3LA-1_T1679638785.png", 
-        descripcion: "Intel i5, 16GB RAM, 512GB SSD, 15.6 pulgadas" 
-    },
-    
-    // ========== MONITORES ==========
-    { 
-        id: 4, 
-        nombre: "Monitor Samsung Odyssey G5", 
-        categoria: "Monitores", 
-        precio: 749900,
-        precioAnterior: 899900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 10,
-        imagen: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop", 
-        descripcion: "27 pulgadas 144Hz QHD, 1ms, FreeSync" 
-    },
-    { 
-        id: 5, 
-        nombre: "Monitor LG UltraGear 27GP850", 
-        categoria: "Monitores", 
-        precio: 849900,
-        precioAnterior: 999900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 6,
-        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTM9e3F8QUsz5ZJVU5kwdh__v1c2M-F35aWr_TRWr0AwgH4wDy9nBGPdc&s=100", 
-        descripcion: "27 pulgadas Nano IPS, 165Hz, HDR10" 
-    },
-    
-    // ========== TECLADOS ==========
-    { 
-        id: 6, 
-        nombre: "Teclado Mecánico Logitech G Pro", 
-        categoria: "Teclados", 
-        precio: 299900,
-        precioAnterior: 349900,
-        oferta: true,
-        cuotas: 3,
-        envioGratis: true,
-        stock: 15,
-        imagen: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=300&fit=crop", 
-        descripcion: "Switches GX Blue, RGB, TKL" 
-    },
-    { 
-        id: 7, 
-        nombre: "Teclado Redragon Kumara K552", 
-        categoria: "Teclados", 
-        precio: 149900,
-        precioAnterior: 189900,
-        oferta: true,
-        cuotas: 3,
-        envioGratis: true,
-        stock: 20,
-        imagen: "https://gorilagames.com/img/Public/1019-producto-redragon-kumara-white-8194.jpg", 
-        descripcion: "Switches Outemu Blue, RGB, 60%" 
-    },
-    
-    // ========== RATONES ==========
-    { 
-        id: 8, 
-        nombre: "Mouse Logitech G502 Hero", 
-        categoria: "Ratones", 
-        precio: 189900,
-        precioAnterior: 229900,
-        oferta: true,
-        cuotas: 3,
-        envioGratis: true,
-        stock: 12,
-        imagen: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=300&fit=crop", 
-        descripcion: "25K DPI, 11 botones, RGB" 
-    },
-    { 
-        id: 9, 
-        nombre: "Mouse Razer DeathAdder V3", 
-        categoria: "Ratones", 
-        precio: 169900,
-        precioAnterior: 199900,
-        oferta: true,
-        cuotas: 3,
-        envioGratis: true,
-        stock: 10,
-        imagen: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=400&h=300&fit=crop", 
-        descripcion: "30K DPI, 59g, 8K Hz" 
-    },
-    
-    // ========== AURICULARES ==========
-    { 
-        id: 10, 
-        nombre: "Auriculares HyperX Cloud II", 
-        categoria: "Auriculares", 
-        precio: 209900,
-        precioAnterior: 249900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 8,
-        imagen: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop", 
-        descripcion: "7.1 Surround, USB, Memory Foam" 
-    },
-    { 
-        id: 11, 
-        nombre: "Auriculares Sony WH-1000XM5", 
-        categoria: "Auriculares", 
-        precio: 849900,
-        precioAnterior: 999900,
-        oferta: true,
-        cuotas: 12,
-        envioGratis: true,
-        stock: 4,
-        imagen: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400&h=300&fit=crop", 
-        descripcion: "ANC, 30h batería, LDAC" 
-    },
-    
-    // ========== DISCOS SSD ==========
-    { 
-        id: 12, 
-        nombre: "SSD Samsung 990 PRO 1TB", 
-        categoria: "Almacenamiento", 
-        precio: 279900,
-        precioAnterior: 329900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 7,
-        imagen: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop", 
-        descripcion: "NVMe M.2, 7450 MB/s lectura" 
-    },
-    { 
-        id: 13, 
-        nombre: "SSD WD Black SN850X 2TB", 
-        categoria: "Almacenamiento", 
-        precio: 429900,
-        precioAnterior: 499900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 5,
-        imagen: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop", 
-        descripcion: "NVMe M.2, 7300 MB/s lectura" 
-    },
-    
-    // ========== MEMORIAS RAM ==========
-    { 
-        id: 14, 
-        nombre: "RAM Corsair Vengeance 32GB DDR5", 
-        categoria: "Memorias", 
-        precio: 359900,
-        precioAnterior: 419900,
-        oferta: true,
-        cuotas: 6,
-        envioGratis: true,
-        stock: 9,
-        imagen: "https://assets.corsair.com/image/upload/c_pad,q_85,h_1100,w_1100,f_auto/products/Memory/vengeance-rgb-ddr5-config/white/2up/Vengeance-RGB-DDR5-2UP-64GB-WHITE_01.webp", 
-        descripcion: "6000MHz, RGB, CL30" 
-    },
-    { 
-        id: 15, 
-        nombre: "RAM Kingston Fury Beast 16GB DDR4", 
-        categoria: "Memorias", 
-        precio: 189900,
-        precioAnterior: 229900,
-        oferta: true,
-        cuotas: 3,
-        envioGratis: true,
-        stock: 11,
-        imagen: "https://statics.qloud.com.ar/clan-co-10-2020/179_28-07-2022-01-07-18-3.jpg", 
-        descripcion: "3200MHz, RGB, CL16" 
+
+// URL de nuestra API. Si estamos probando en la compu usa el servidor local,
+// si no usa el de Railway (cambiar por la URL que nos da Railway)
+const API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:3000'
+    : 'https://TU-BACKEND.up.railway.app';
+
+// Aca se guardan los productos que trae la API
+let productos = [];
+
+// Pide los productos al back-end y los muestra
+async function cargarProductos() {
+    const container = document.getElementById('productosContainer');
+    container.innerHTML = '<p class="text-center text-muted">Cargando productos...</p>';
+
+    try {
+        const respuesta = await fetch(`${API_URL}/api/productos`);
+        if (!respuesta.ok) throw new Error('La API respondio con error');
+        productos = await respuesta.json();
+        renderizarProductos();
+    } catch (error) {
+        console.error('Error al cargar productos:', error);
+        container.innerHTML = '<div class="alert alert-danger text-center">No se pudieron cargar los productos. Probá de nuevo más tarde.</div>';
     }
-];
+}
 
 // ============================================
-// 2. BANCOS Y MÉTODOS DE PAGO (¡DEFINIDOS ANTES DE USARLOS!)
+// 2. BANCOS Y MÉTODOS DE PAGO
 // ============================================
 const bancos = [
     { 
@@ -395,13 +210,13 @@ function calcularTotal(carrito) {
 }
 
 function calcularAhorro(producto) {
-    if (!producto.precioAnterior) return 0;
-    return producto.precioAnterior - producto.precio;
+    if (!producto.precio_anterior) return 0;
+    return producto.precio_anterior - producto.precio;
 }
 
 function calcularPorcentajeOferta(producto) {
-    if (!producto.precioAnterior || producto.precioAnterior === 0) return 0;
-    return Math.round(((producto.precioAnterior - producto.precio) / producto.precioAnterior) * 100);
+    if (!producto.precio_anterior || producto.precio_anterior === 0) return 0;
+    return Math.round(((producto.precio_anterior - producto.precio) / producto.precio_anterior) * 100);
 }
 
 function actualizarBadgeCarrito() {
@@ -441,16 +256,18 @@ function renderizarProductos() {
         
         let badgesHTML = '';
         
-        if (producto.oferta && producto.precioAnterior) {
+        if (producto.precio_anterior) {
             badgesHTML += `<span class="badge bg-danger me-1">🔥 -${porcentajeOferta}%</span>`;
         }
         if (producto.cuotas) {
             badgesHTML += `<span class="badge bg-success me-1">${producto.cuotas}x $${valorCuota.toLocaleString()}</span>`;
         }
-        if (producto.envioGratis) {
+        if (producto.envio_gratis) {
             badgesHTML += `<span class="badge bg-info text-dark">🚚 Envío gratis</span>`;
         }
-        if (producto.stock <= 3) {
+        if (producto.stock === 0) {
+            badgesHTML += `<span class="badge bg-dark">Sin stock</span>`;
+        } else if (producto.stock <= 3) {
             badgesHTML += `<span class="badge bg-warning text-dark">⚠️ Últimas unidades</span>`;
         }
 
@@ -460,7 +277,7 @@ function renderizarProductos() {
             <div class="card h-100 shadow-sm">
                 <div class="position-relative">
                     <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}" loading="lazy" 
-                         onerror="this.src='https://via.placeholder.com/400x300/0d6efd/ffffff?text=${encodeURIComponent(producto.nombre)}'">
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=ItuStore'">
                     <div class="position-absolute top-0 start-0 p-2">
                         ${badgesHTML}
                     </div>
@@ -470,16 +287,16 @@ function renderizarProductos() {
                     <h5 class="card-title">${producto.nombre}</h5>
                     <p class="card-text flex-grow-1">${producto.descripcion}</p>
                     <div class="mt-2">
-                        ${producto.precioAnterior ? `<span class="text-decoration-line-through text-muted small">${formatearPrecioARS(producto.precioAnterior)}</span>` : ''}
+                        ${producto.precio_anterior ? `<span class="text-decoration-line-through text-muted small">${formatearPrecioARS(producto.precio_anterior)}</span>` : ''}
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="precio">${formatearPrecioARS(producto.precio)}</span>
-                            <button class="btn btn-primary btn-agregar" data-id="${producto.id}" 
-                                    aria-label="Agregar ${producto.nombre} al carrito">
+                            <button class="btn btn-primary btn-agregar" data-id="${producto.id}"
+                                    aria-label="Agregar ${producto.nombre} al carrito" ${producto.stock === 0 ? 'disabled' : ''}>
                                 <i class="bi bi-cart-plus me-1"></i> Agregar
                             </button>
                         </div>
                         ${producto.cuotas ? `<small class="text-muted">${producto.cuotas}x ${formatearPrecioARS(valorCuota)} sin interés</small>` : ''}
-                        ${producto.envioGratis ? `<small class="text-success d-block">✅ Envío gratis</small>` : ''}
+                        ${producto.envio_gratis ? `<small class="text-success d-block">✅ Envío gratis</small>` : ''}
                         <small class="text-muted">Stock: ${producto.stock} unidades</small>
                     </div>
                 </div>
@@ -982,7 +799,7 @@ function abrirModalPago() {
     // ============================================
     // 7.3 CONFIRMAR COMPRA
     // ============================================
-    document.getElementById('btnConfirmarCompra').addEventListener('click', function() {
+    document.getElementById('btnConfirmarCompra').addEventListener('click', async function() {
         const nombre = document.getElementById('nombreComprador').value.trim();
         const email = document.getElementById('emailComprador').value.trim();
         const dni = document.getElementById('dniComprador').value.trim();
@@ -1041,9 +858,33 @@ function abrirModalPago() {
         this.disabled = true;
         this.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Procesando...';
 
-        setTimeout(() => {
-            const nroPedido = 'ITU-' + Date.now().toString().slice(-8);
-            
+        // Armamos el pedido para mandarlo al back-end (los datos de la tarjeta NO se mandan)
+        const pedido = {
+            nombre: nombre,
+            email: email,
+            dni: dni,
+            metodoPago: metodoSeleccionado,
+            cuotas: metodoSeleccionado === 'credito' ? cuotasSeleccionadas : 1,
+            items: carrito.map(item => ({ id: item.id, cantidad: item.cantidad }))
+        };
+
+        try {
+            const respuesta = await fetch(`${API_URL}/api/pedidos`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(pedido)
+            });
+            const datos = await respuesta.json();
+
+            // Si el back-end rechaza el pedido (por ejemplo, sin stock) mostramos el motivo
+            if (!respuesta.ok) {
+                alert('⚠️ ' + (datos.error || 'No se pudo realizar la compra'));
+                this.disabled = false;
+                this.innerHTML = '<i class="bi bi-check-circle me-2"></i> Confirmar compra';
+                return;
+            }
+
+            const nroPedido = 'ITU-' + String(datos.id).padStart(6, '0');
             const numeroTarjetaMostrar = document.getElementById('numeroTarjeta')?.value || '****';
             const ultimos4 = numeroTarjetaMostrar.slice(-4);
             
@@ -1056,7 +897,7 @@ function abrirModalPago() {
                         <p><strong>Cliente:</strong> ${nombre}</p>
                         <p><strong>Email:</strong> ${email}</p>
                         <p><strong>DNI:</strong> ${dni}</p>
-                        <p><strong>Método:</strong> ${metodoObj?.icon} ${metodoObj?.nombre}</p>
+                        <p><strong>Método:</strong> ${metodoObj?.icon || ''} ${metodoObj?.nombre}</p>
                         ${(metodoSeleccionado === 'debito' || metodoSeleccionado === 'credito') ? `
                             <p><strong>Tarjeta:</strong> **** **** **** ${ultimos4}</p>
                             <p><strong>Titular:</strong> ${document.getElementById('nombreTitular')?.value || ''}</p>
@@ -1064,23 +905,30 @@ function abrirModalPago() {
                         ` : ''}
                         ${metodoSeleccionado === 'credito' ? `<p><strong>Cuotas:</strong> ${cuotasSeleccionadas}x sin interés</p>` : ''}
                         <hr>
-                        <p class="fw-bold">Total: ${formatearPrecioARS(total)}</p>
+                        <p class="fw-bold">Total: ${formatearPrecioARS(datos.total)}</p>
                     </div>
-                    <p class="text-muted mt-3">Te enviaremos un email con los detalles de tu compra.</p>
+                    <p class="text-muted mt-3">Tu pedido quedó registrado en nuestro sistema.</p>
                     <button class="btn btn-primary mt-2" onclick="location.reload()">
                         <i class="bi bi-house me-2"></i> Volver a la tienda
                     </button>
                 </div>
             `;
 
-            document.querySelector('.modal-body').innerHTML = comprobante;
-            document.querySelector('.modal-footer').style.display = 'none';
+            // Antes se usaba document.querySelector('.modal-body') y agarraba el del carrito.
+            // Ahora buscamos dentro del modal de pago
+            modalElement.querySelector('.modal-body').innerHTML = comprobante;
+            modalElement.querySelector('.modal-footer').style.display = 'none';
             
             saveCarrito([]);
             actualizarBadgeCarrito();
-            
+            renderizarCarrito();
+            cargarProductos(); // para que se vea el stock actualizado
+        } catch (error) {
+            console.error('Error al enviar el pedido:', error);
+            alert('❌ No se pudo conectar con el servidor. Probá de nuevo.');
             this.disabled = false;
-        }, 2000);
+            this.innerHTML = '<i class="bi bi-check-circle me-2"></i> Confirmar compra';
+        }
     });
 
     // Seleccionar primer banco por defecto
@@ -1093,14 +941,7 @@ function abrirModalPago() {
 // 8. INICIALIZACIÓN
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🛒 ItuStore - Inicializando...');
-    console.log('📦 Productos disponibles:', productos.length);
-    console.log('💰 Moneda: Pesos Argentinos (ARS)');
-    console.log('🏷️ Ofertas activas: Sí');
-    console.log('💳 Cuotas sin interés: Sí');
-    console.log('🏦 Bancos disponibles:', bancos.length);
-    
-    renderizarProductos();
+    cargarProductos(); // los productos ahora se piden a la API
     actualizarBadgeCarrito();
     renderizarCarrito();
 
@@ -1163,6 +1004,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    console.log('✅ ItuStore inicializado correctamente');
 });
