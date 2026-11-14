@@ -1,0 +1,11 @@
+Desarrollo de Sistemas Web 2026 - Proyecto Final
+Grupo X - ItuStore
+
+Integrantes:
+-
+-
+-
+
+Repositorio de GitHub: https://github.com/juanlevrero31/ItuStore
+Front-End (Vercel):
+Back-End (Railway):
