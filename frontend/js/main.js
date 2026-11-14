@@ -6,7 +6,7 @@
 // si no usa el de Railway (cambiar por la URL que nos da Railway)
 const API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
     ? 'http://localhost:3000'
-    : 'https://TU-BACKEND.up.railway.app';
+    : 'https://itustore-production.up.railway.app';
 
 // Aca se guardan los productos que trae la API
 let productos = [];
